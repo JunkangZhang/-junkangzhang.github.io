@@ -63,7 +63,7 @@ def process_bibtex_authors(authors):
     :return:
     '''
     if 'and' in authors:
-        authors_list = authors.split('and')
+        authors_list = authors.split(' and ')
         for idx, author in enumerate(authors_list):
             author = author.strip()
             if ',' in author:
@@ -126,9 +126,11 @@ def process_publications(fp_w, bib, orders):
                 text += '%s <br>\n' % authors
                 text += '*%s*, ' % bib_c['journal'] if 'journal' in bib_c.keys() else '*%s*, ' % bib_c['booktitle']
                 text += '%s <br>\n' % bib_c['year']
-                text += '**\[[Paper \(link\)](%s)\]**' % ('https://doi.org/'+bib_c['doi']) if 'doi' in bib_c.keys() else ''
+                text += '**\[[DOI](%s)\]**' % ('https://doi.org/'+bib_c['doi']) if 'doi' in bib_c.keys() else ''
+                text += ' &ensp; **\[[PDF](%s)\]**' % bib_c['pdf'] if 'pdf' in bib_c.keys() else ''
                 text += ' &ensp; **\[[Supplementary](%s)\]**' % bib_c['supplementary'] if 'supplementary' in bib_c.keys() else ''
                 text += ' &ensp; **\[[Code](%s)\]**' % bib_c['code'] if 'code' in bib_c.keys() else ''
+                text += ' &ensp; **\[[Data](%s)\]**' % bib_c['data'] if 'data' in bib_c.keys() else ''
                 text += '<br>\n'
 
                 # text += '<details> ' \
@@ -139,7 +141,7 @@ def process_publications(fp_w, bib, orders):
                 # text += '<p align="center"> ' \
                 #         '<img src="{{site.baseurl}}%s" > ' \
                 #         '</p>\n' % bib_c['image_bar'] if 'image_bar' in bib_c.keys() else ''
-                text += '<br>\n'
+                # text += '<br>\n'
                 fp_w.write(text)
                 print(text)
 
