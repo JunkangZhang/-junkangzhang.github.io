@@ -11,18 +11,9 @@ dugb:
 can:
   name: Cheolhong An
 
-fellows:
-  -
-    name: Melina Cavichini-Cordeiro
-  -
-    name: Fritz Gerald P. Kalaw
-  -
-    name: Manuel J. Amador-Patarroyo
-
-student:
-  -
-    name: Yiqian Wang
-    homepage: https://yiqian-wang.github.io/
-  -
-    name: Junkang Zhang
-    homepage: https://junkangzhang.github.io/
+yiqianwang:
+  name: Yiqian Wang
+  homepage: https://yiqian-wang.github.io/
+junkangzhang:
+  name: Junkang Zhang
+  homepage: https://junkangzhang.github.io/

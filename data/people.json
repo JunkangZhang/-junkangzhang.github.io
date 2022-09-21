@@ -1,0 +1,60 @@
+{
+    "truongnguyen":
+    {
+        "name": "Truong Q. Nguyen",
+        "search": ["truong", "nguyen"],
+        "link": "http://videoprocessing.ucsd.edu/?page_id=40",
+        "homepage": "http://videoprocessing.ucsd.edu/?page_id=40"
+    },
+    "williamfreeman":
+    {
+        "name": "William R. Freeman",
+        "search": ["william", "freeman"],
+        "link": null,
+        "homepage": "https://shileyeye.ucsd.edu/faculty/william-freeman"
+    },
+    "dirk_bartsch":
+    {
+        "name": "Dirk-Uwe G. Bartsch",
+        "search": ["dirk", "bartsch"],
+        "link": null,
+        "homepage": "https://shileyeye.ucsd.edu/faculty/dirk-uwe-bartsch"
+    },
+    "cheolhong_an":
+    {
+        "name": "Cheolhong An",
+        "search": ["cheolhong", "an"],
+        "link": null
+    },
+    "yiqian_wang":
+    {
+        "name": "Yiqian Wang",
+        "search": ["yiqian", "wang"],
+        "link": "https://yiqian-wang.github.io/"
+    },
+    "ji_dai":
+    {
+        "name": "Ji Dai",
+        "search": ["ji", "dai"],
+        "link": "https://jidai-code.github.io/"
+    },
+    "junkang_zhang":
+    {
+        "name": "Junkang Zhang",
+        "search": ["junkang", "zhang"],
+        "link": "https://junkangzhang.github.io/"
+    },
+    "chijui_ho":
+    {
+        "name": "Chi-Jui Ho",
+        "search": ["chi", "jui", "ho"],
+        "link": "https://jerryhotaiwan.github.io/"
+    },
+
+    "siyu_xia":
+    {
+        "name": "Siyu Xia",
+        "search": ["siyu", "xia"],
+        "link": "https://www.siyuxia.com/"
+    }
+}

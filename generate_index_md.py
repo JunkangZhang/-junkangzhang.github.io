@@ -56,7 +56,22 @@ def write_goal(fp):
            '(clinical specialist). \n\n'
     fp.write(text)
 
-def process_bibtex_authors(authors):
+def process_author_add_link(author, people_json):
+    for ppl in people_json.keys():
+        if people_json[ppl]['link'] is None:
+            continue
+        candidate_list = people_json[ppl]['search']
+        match = [candidate in author.lower() for candidate in candidate_list]
+        if sum(match)==len(candidate_list):
+            # if people_json[ppl]['link'] is not None:
+            author = '[%s](%s)'%(author, people_json[ppl]['link'])
+            if 'junkang' in author and 'zhang' in author:
+                author = '**'+author+'**'
+            break
+    return author
+
+
+def process_bibtex_authors(authors, people_json):
     '''
     change from 'lastname1, firstname1 and lastname2, firstname2' to 'firstname1 lastname1, firstname2 lastname2'
     :param authors: author string from bibtex
@@ -68,11 +83,12 @@ def process_bibtex_authors(authors):
             author = author.strip()
             if ',' in author:
                 last, first = author.rsplit(',', 1)
-                authors_list[idx] = first.strip() + ' ' + last.strip()
+                author_fullname = first.strip() + ' ' + last.strip()
+                authors_list[idx] = process_author_add_link(author_fullname, people_json)
         authors = ', '.join(authors_list)
     return authors
 
-def process_publications(fp_w, bib, orders):
+def process_publications(fp_w, bib, orders, people_json=None):
     # order_c = orders[0]
     order = orders[0]
     ko, vo, output = order['key'], order['order'], order['output']
@@ -97,7 +113,7 @@ def process_publications(fp_w, bib, orders):
             fp_w.write(text)
             print(text)
         if len(orders) > 1:
-            process_publications(fp_w, bibnew[kn], orders[1:])
+            process_publications(fp_w, bibnew[kn], orders[1:], people_json)
         else:
             for kb in bibnew[kn].keys():
                 text = ''
@@ -122,7 +138,7 @@ def process_publications(fp_w, bib, orders):
                 #         # 'font-family:\'Courier\'"> ' \
                 #     text += '</div>\n'
                 text += '**%s** <br>\n' % bib_c['title'].replace('{','').replace('}','')
-                authors = process_bibtex_authors(bib_c['author'])
+                authors = process_bibtex_authors(bib_c['author'], people_json)
                 text += '%s <br>\n' % authors
                 text += '*%s*, ' % bib_c['journal'] if 'journal' in bib_c.keys() else '*%s*, ' % bib_c['booktitle']
                 text += '%s <br>\n' % bib_c['year']
@@ -153,6 +169,7 @@ if __name__=='__main__':
         for k2 in reference_json[k1].keys():
             bibtex_dict[k1][k2] = reference_json[k1][k2]
     people_yaml = yaml.load(open('data/people.yml'))
+    people_json = json.load(open('data/people.json'))
     print(' ')
 
     fp_w = open('index.md', 'w')
@@ -168,5 +185,5 @@ if __name__=='__main__':
               {'key': 'ENTRYTYPE', 'order': ['article', 'inproceedings'], 'output': 'tag'},
               {'key': 'type', 'order': ['engineering', 'clinical'], 'output': 'tag'}]
 
-    process_publications(fp_w, bibtex_dict, orders)
+    process_publications(fp_w, bibtex_dict, orders, people_json)
 
