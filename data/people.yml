@@ -1,0 +1,38 @@
+pi:
+  -
+    name: Truong Q. Nguyen
+    prefix: Prof.
+    role: PI
+    homepage: http://videoprocessing.ucsd.edu/?page_id=40
+  -
+    name: William R. Freeman
+    prefix: Prof.
+    suffix: MD
+    role: Co-PI
+    homepage: https://shileyeye.ucsd.edu/faculty/william-freeman
+  -
+    name: Dirk-Uwe Bartsch
+    prefix: Prof.
+    suffix: PhD
+    role: Co-PI
+    homepage: https://shileyeye.ucsd.edu/faculty/dirk-uwe-bartsch
+  -
+    name: Cheolhong An
+    prefix: Prof.
+    role: Co-PI
+
+fellows:
+  -
+    name: Melina Cavichini-Cordeiro
+  -
+    name: Fritz Gerald P. Kalaw
+  -
+    name: Manuel J. Amador-Patarroyo
+
+student:
+  -
+    name: Yiqian Wang
+    homepage: https://yiqian-wang.github.io/
+  -
+    name: Junkang Zhang
+    homepage: https://junkangzhang.github.io/

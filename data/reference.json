@@ -1,0 +1,114 @@
+{
+  "2022TIP_An_selfsupervise":
+  {
+    "type": "engineering",
+    "topic": "retinal_alignment"
+  },
+  "2022TIP_Zhang_twostep":
+  {
+    "type": "engineering",
+    "topic": "retinal_alignment"
+  },
+
+  "2021EMBC_Zhang_distortion":
+  {
+    "type": "engineering",
+    "topic": "retinal_alignment"
+  },
+  "2021ISOCC_Ho_temporal":
+  {
+    "type": "engineering",
+    "topic": "retinal_alignment"
+  },
+  "2021ICASSP_Liang_avascular":
+  {
+    "type": "engineering",
+    "topic": "fovea_avascular"
+  },
+  "2021TIP_Wang_robust":
+  {
+    "type": "engineering",
+    "topic": "retinal_alignment"
+  },
+
+  "2020Access_Wang_correlation":
+  {
+    "type": "engineering",
+    "topic": "retinal_alignment"
+  },
+  "2020SPIE_An_fovea":
+  {
+    "type": "engineering",
+    "topic": "fovea_avascular"
+  },
+  "2020TIP_Dai_matching":
+  {
+    "type": "engineering",
+    "topic": "image_matching"
+  },
+  "2020ICASSP_Wang_robust":
+  {
+    "type": "engineering",
+    "topic": "retinal_alignment"
+  },
+  "2020TVST_Cavichini_overlay":
+  {
+    "type": "clinical",
+    "topic": "retinal_alignment"
+  },
+
+  "2019ICIP_Zhang_style":
+  {
+    "type": "engineering",
+    "topic": "retinal_alignment",
+    "code": "https://github.com/JunkangZhang/RetinalSegReg",
+    "supplementary": "https://github.com/JunkangZhang/RetinalSegReg/blob/master/ICIP2019_supplementary.pdf"
+  },
+  "2019ICIP_Dai_orientation":
+  {
+    "type": "engineering",
+    "topic": "image_matching"
+  },
+
+  "2018GlobalSIP_Zhang_demosaic":
+  {
+    "type": "engineering",
+    "topic": "demosaicing",
+    "data": "https://github.com/JunkangZhang/JDMSR"
+  },
+
+  "2017CCC_Zhou_collaborative":
+  {
+    "type": "engineering",
+    "topic": "social_media"
+  },
+  "2017ICMR_Zhang_family":
+  {
+    "type": "engineering",
+    "topic": "kinship"
+  },
+
+  "2016ICPR_Zhang_road":
+  {
+    "type": "engineering",
+    "topic": "road",
+    "code": "https://github.com/JunkangZhang/UFL-HS-RoadDetection"
+  },
+  "2016ICIP_Zhang_kinship":
+  {
+    "type": "engineering",
+    "topic": "kinship"
+  },
+  "2016JEI_Lu_road":
+  {
+    "type": "engineering",
+    "topic": "road"
+  },
+
+  "2015IVCNZ_Xia_road":
+  {
+    "type": "engineering",
+    "topic": "road"
+  }
+
+}
