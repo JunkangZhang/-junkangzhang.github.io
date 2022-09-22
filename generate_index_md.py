@@ -83,8 +83,8 @@ def process_bibtex_authors(authors, people_json):
             author = author.strip()
             if ',' in author:
                 last, first = author.rsplit(',', 1)
-                author_fullname = first.strip() + ' ' + last.strip()
-                authors_list[idx] = process_author_add_link(author_fullname, people_json)
+                author = first.strip() + ' ' + last.strip()
+            authors_list[idx] = process_author_add_link(author, people_json)
         authors = ', '.join(authors_list)
     return authors
 

@@ -43,7 +43,7 @@ Melina Cavichini, Cheolhong An, Dirk-Uwe G. Bartsch, Mahima Jhingan, Manuel J. A
 *Translational Vision Science & Technology*, 2020 <br>
 **\[[DOI](https://doi.org/10.1167/tvst.9.2.56)\]** &ensp; **\[[PDF](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7594596/pdf/tvst-9-2-56.pdf)\]**<br>
 **Fovea localization neural network for multimodal retinal imaging** <br>
-Cheolhong An, Yiqian Wang, Junkang Zhang, Dirk-Uwe G. Bartsch, William R. Freeman <br>
+Cheolhong An, [Yiqian Wang](https://yiqian-wang.github.io/), **[Junkang Zhang](https://junkangzhang.github.io/)**, Dirk-Uwe G. Bartsch, William R. Freeman <br>
 *Applications of Machine Learning 2020*, 2020 <br>
 **\[[DOI](https://doi.org/10.1117/12.2569858)\]**<br>
 **A Segmentation Based Robust Deep Learning Framework for Multimodal Retinal Image Registration** <br>
@@ -70,24 +70,24 @@ Yuan Zhou, [Siyu Xia](https://www.siyuxia.com/), **[Junkang Zhang](https://junka
 *2017 36th Chinese Control Conference (CCC)*, 2017 <br>
 **\[[DOI](https://doi.org/10.23919/ChiCC.2017.8029111)\]**<br>
 **Family Photo Recognition via Multiple Instance Learning** <br>
-**[Junkang Zhang](https://junkangzhang.github.io/)**, [Siyu Xia](https://www.siyuxia.com/), Ming Shao, Yun Fu <br>
+**[Junkang Zhang](https://junkangzhang.github.io/)**, [Siyu Xia](https://www.siyuxia.com/), [Ming Shao](http://www.cis.umassd.edu/~mshao/), [Yun Fu](http://www.ece.neu.edu/~yunfu/) <br>
 *Proceedings of the 2017 ACM on International Conference on Multimedia Retrieval*, 2017 <br>
 **\[[DOI](https://doi.org/10.1145/3078971.3079036)\]**<br>
 ### 2016
 **Robust road detection in shadow conditions** <br>
-Kaiyue Lu, Siyu Xia, Junkang Zhang, A. Kai Qin <br>
+Kaiyue Lu, [Siyu Xia](https://www.siyuxia.com/), **[Junkang Zhang](https://junkangzhang.github.io/)**, [A. Kai Qin](http://www.alexkaiqin.org/) <br>
 *Journal of Electronic Imaging*, 2016 <br>
 **\[[DOI](https://doi.org/10.1117/1.JEI.25.4.043027)\]**<br>
 **Robust road detection from a single image** <br>
-**[Junkang Zhang](https://junkangzhang.github.io/)**, [Siyu Xia](https://www.siyuxia.com/), Kaiyue Lu, Hong Pan, A. K. Qin <br>
+**[Junkang Zhang](https://junkangzhang.github.io/)**, [Siyu Xia](https://www.siyuxia.com/), Kaiyue Lu, Hong Pan, [A. K. Qin](http://www.alexkaiqin.org/) <br>
 *2016 23rd International Conference on Pattern Recognition (ICPR)*, 2016 <br>
 **\[[DOI](https://doi.org/10.1109/ICPR.2016.7899743)\]** &ensp; **\[[PDF](https://projet.liris.cnrs.fr/imagine/pub/proceedings/ICPR-2016/media/files/0816.pdf)\]** &ensp; **\[[Code](https://github.com/JunkangZhang/UFL-HS-RoadDetection)\]**<br>
 **A genetics-motivated unsupervised model for tri-subject kinship verification** <br>
-**[Junkang Zhang](https://junkangzhang.github.io/)**, [Siyu Xia](https://www.siyuxia.com/), Hong Pan, A. K. Qin <br>
+**[Junkang Zhang](https://junkangzhang.github.io/)**, [Siyu Xia](https://www.siyuxia.com/), Hong Pan, [A. K. Qin](http://www.alexkaiqin.org/) <br>
 *2016 IEEE International Conference on Image Processing (ICIP)*, 2016 <br>
 **\[[DOI](https://doi.org/10.1109/ICIP.2016.7532893)\]**<br>
 ### 2015
 **Road detection via unsupervised feature learning** <br>
-[Siyu Xia](https://www.siyuxia.com/), Junkang Zhang, Kaiyue Lu, A. K. Qin <br>
+[Siyu Xia](https://www.siyuxia.com/), **[Junkang Zhang](https://junkangzhang.github.io/)**, Kaiyue Lu, [A. K. Qin](http://www.alexkaiqin.org/) <br>
 *2015 International Conference on Image and Vision Computing New Zealand (IVCNZ)*, 2015 <br>
 **\[[DOI](https://doi.org/10.1109/IVCNZ.2015.7761562)\]**<br>

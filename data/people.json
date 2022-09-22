@@ -56,5 +56,23 @@
         "name": "Siyu Xia",
         "search": ["siyu", "xia"],
         "link": "https://www.siyuxia.com/"
+    },
+    "kai_qin":
+    {
+        "name": "Alex Kai Qin",
+        "search": ["a", "k", "qin"],
+        "link": "http://www.alexkaiqin.org/"
+    },
+    "yun_fu":
+    {
+        "name": "Yun Fu",
+        "search": ["yun", "fu"],
+        "link": "http://www.ece.neu.edu/~yunfu/"
+    },
+    "ming_shao":
+    {
+        "name": "Ming Shao",
+        "search": ["ming", "shao"],
+        "link": "http://www.cis.umassd.edu/~mshao/"
     }
 }
