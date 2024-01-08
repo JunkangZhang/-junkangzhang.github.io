@@ -3,6 +3,7 @@ import json
 import yaml
 import textwrap
 from collections import OrderedDict
+import numpy as np
 
 tags_mapping = {
     'article':{'show':'Journal', 'backcolor':'#dafbe1', 'fontcolor':'#2da44e'},
@@ -163,12 +164,27 @@ def process_publications(fp_w, bib, orders, people_json=None):
 
 
 if __name__=='__main__':
+    def _check_keys_match(k1s, k2s):
+        match = True
+        for k1 in k1s:
+            if k1 not in k2s:
+                print(k1, ' not found')
+                match = False
+        return match
+
     bibtex_dict = OrderedDict(bibtexparser.load(open("data/reference.bib")).entries_dict)
     reference_json = json.load(open('data/reference.json'))
+
+    print('check if reference.bib and reference.json match with each other')
+    match = _check_keys_match(list(bibtex_dict.keys()), list(reference_json.keys()))
+    match = match and _check_keys_match(list(reference_json.keys()), list(bibtex_dict.keys()))
+    print(match)
+    assert match==True, 'not match'
+
     for k1 in bibtex_dict.keys():
         for k2 in reference_json[k1].keys():
             bibtex_dict[k1][k2] = reference_json[k1][k2]
-    people_yaml = yaml.load(open('data/people.yml'))
+    # people_yaml = yaml.safe_load(open('data/people.yml'))
     people_json = json.load(open('data/people.json'))
     print(' ')
 

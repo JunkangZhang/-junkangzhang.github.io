@@ -3,19 +3,6 @@ permalink: /
 ---
 
 # Publications <a name="publications"></a>
-### 2023
-**Ultra-wide field and new wide field composite retinal image registration with AI-enabled pipeline and 3D distortion correction algorithm** <br>
-Fritz Gerald P. Kalaw, Melina Cavichini, **[Junkang Zhang](https://junkangzhang.github.io/)**, Bo Wen, Andrew C. Lin, Anna Heinke, [Truong Nguyen](http://videoprocessing.ucsd.edu/?page_id=40), Cheolhong An, Dirk-Uwe G. Bartsch, Lingyun Cheng, William R. Freeman <br>
-*Eye*, 2023 <br>
-**\[[DOI](https://doi.org/10.1038/s41433-023-02868-3)\]** &ensp; **\[[PDF](https://www.nature.com/articles/s41433-023-02868-3.pdf)\]**<br>
-**Accuracy and Time Comparison Between Side-by-Side and Artificial Intelligence Overlayed Images** <br>
-Melina Cavichini, Dirk-Uwe G Bartsch, Alexandra Warter, Sumit Singh, Cheolhong An, [Yiqian Wang](https://yiqian-wang.github.io/), **[Junkang Zhang](https://junkangzhang.github.io/)**, [Truong Nguyen](http://videoprocessing.ucsd.edu/?page_id=40), William R Freeman <br>
-*Ophthalmic Surgery, Lasers and Imaging Retina*, 2023 <br>
-**\[[DOI](https://doi.org/10.3928/23258160-20230130-03)\]**<br>
-**Accurate Registration between Ultra-Wide-Field and Narrow Angle Retina Images with 3D Eyeball Shape Optimization** <br>
-**[Junkang Zhang](https://junkangzhang.github.io/)**, Bo Wen, Fritz Gerald P. Kalaw, Melina Cavichini, Dirk-Uwe G. Bartsch, William R. Freeman, [Truong Q. Nguyen](http://videoprocessing.ucsd.edu/?page_id=40), Cheolhong An <br>
-*2023 IEEE International Conference on Image Processing (ICIP)*, 2023 <br>
-**\[[DOI](https://doi.org/10.1109/ICIP49359.2023.10223163)\]**<br>
 ### 2022
 **Self-Supervised Rigid Registration for Multimodal Retinal Images** <br>
 Cheolhong An, [Yiqian Wang](https://yiqian-wang.github.io/), **[Junkang Zhang](https://junkangzhang.github.io/)**, [Truong Q. Nguyen](http://videoprocessing.ucsd.edu/?page_id=40) <br>
