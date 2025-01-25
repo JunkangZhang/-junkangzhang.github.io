@@ -1,14 +1,26 @@
 {
-  "2023ICIP_Zhang_uwfeyeball":
+  "2022USPatent_Zhang_faceattribute":
   {
     "type": "engineering",
-    "topic": "retinal_alignment"
+    "links":
+    {
+      "USPTO": "https://patentcenter.uspto.gov/applications/17668956",
+      "Google Patent": "https://patents.google.com/patent/US20230252687A1/en"
+    }
   },
-  "2023Eye_Kalaw_composite":
+
+  "2024Eye_Kalaw_composite":
   {
     "type": "clinical",
     "topic": "retinal_alignment",
     "pdf": "https://www.nature.com/articles/s41433-023-02868-3.pdf"
+  },
+
+  "2023ICIP_Zhang_uwfeyeball":
+  {
+    "type": "engineering",
+    "topic": "retinal_alignment",
+    "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11211856/pdf/nihms-2002977.pdf"
   },
   "2023OSLIR_Cavichini_sidebyside":
   {
@@ -19,12 +31,14 @@
   "2022TIP_An_selfsupervise":
   {
     "type": "engineering",
-    "topic": "retinal_alignment"
+    "topic": "retinal_alignment",
+    "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11211857/pdf/nihms-1908718.pdf"
   },
   "2022TIP_Zhang_twostep":
   {
     "type": "engineering",
-    "topic": "retinal_alignment"
+    "topic": "retinal_alignment",
+    "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8912939/pdf/nihms-1768721.pdf"
   },
 
   "2021EMBC_Zhang_distortion":

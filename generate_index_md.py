@@ -89,27 +89,43 @@ def process_bibtex_authors(authors, people_json):
         authors = ', '.join(authors_list)
     return authors
 
+def _prepend_emoji(text, bib_c):
+    '''https://github.com/ikatyang/emoji-cheat-sheet'''
+    if bib_c['type'] in ['clinical']:
+        text += u'⬜ &ensp; '
+    elif bib_c['ENTRYTYPE'] in ['patent']:
+        text += u'🟩 &ensp; '
+    elif bib_c['ENTRYTYPE'] in ['article']:
+        text += u'🟧 &ensp; '
+    elif bib_c['ENTRYTYPE'] in ['inproceedings']:
+        text += u'🟦 &ensp; '
+    return text
+
+
 def process_publications(fp_w, bib, orders, people_json=None):
     # order_c = orders[0]
     order = orders[0]
-    ko, vo, output = order['key'], order['order'], order['output']
-    if type(vo) is not list:
-        allvalues = list(set([bib[_k][ko] for _k in bib.keys()]))
-        if vo=='ascend':
+    sort_key, sort_order, sort_output = order['key'], order['order'], order['output']
+    if type(sort_order) is not list:
+        allvalues = list( set([_v.get(sort_key, None) for _v in bib.values()]) )
+        if sort_order=='ascend':
             allvalues = sorted(allvalues)
-        elif vo=='descend':
+        elif sort_order=='descend':
             allvalues = sorted(allvalues)[::-1]
-        vo = allvalues
-    bibnew = OrderedDict({_k:OrderedDict() for _k in vo})
-    for k_entry in bib.keys():
-        # if bib[kb][ko] not in values
-        bibnew[bib[k_entry][ko]][k_entry]= bib[k_entry]
-        if output.startswith('tag'):
-            if 'tags' not in bibnew[bib[k_entry][ko]][k_entry].keys():
-                bibnew[bib[k_entry][ko]][k_entry]['tags'] = []
-            bibnew[bib[k_entry][ko]][k_entry]['tags'] += [bib[k_entry][ko]]
+        else:
+            assert 0
+        sort_order = allvalues
+    bibnew = OrderedDict({_k:OrderedDict() for _k in sort_order})
+    for bib_key, bib_entry in bib.items():
+        # if bib[kb][sort_key] not in values
+        belongs_to = bib_entry.get(sort_key, None)
+        bibnew[ belongs_to ][bib_key]= bib_entry
+        if sort_output.startswith('tag'):
+            if 'tags' not in bibnew[belongs_to][bib_key].keys():
+                bibnew[belongs_to][bib_key]['tags'] = []
+            bibnew[belongs_to][bib_key]['tags'] += [bib_entry[sort_key]]
     for kn in bibnew.keys():
-        if output=='title':
+        if sort_output=='title':
             text = '### %s\n'%kn
             fp_w.write(text)
             print(text)
@@ -117,7 +133,7 @@ def process_publications(fp_w, bib, orders, people_json=None):
             process_publications(fp_w, bibnew[kn], orders[1:], people_json)
         else:
             for kb in bibnew[kn].keys():
-                text = ''
+                text = u''
                 bib_c = bibnew[kn][kb]
                 # if 'tags' in bib_c.keys():
                 #     text += '<div>\n'
@@ -138,17 +154,31 @@ def process_publications(fp_w, bib, orders, people_json=None):
                 #                 (tags_mapping[tag]['backcolor'], tags_mapping[tag]['fontcolor'], tags_mapping[tag]['show'])
                 #         # 'font-family:\'Courier\'"> ' \
                 #     text += '</div>\n'
+
+                # text += '- ' # bullet
+                text = _prepend_emoji(text, bib_c)
                 text += '**%s** <br>\n' % bib_c['title'].replace('{','').replace('}','')
                 authors = process_bibtex_authors(bib_c['author'], people_json)
                 text += '%s <br>\n' % authors
-                text += '*%s*, ' % bib_c['journal'] if 'journal' in bib_c.keys() else '*%s*, ' % bib_c['booktitle']
-                text += '%s <br>\n' % bib_c['year']
-                text += '**\[[DOI](%s)\]**' % ('https://doi.org/'+bib_c['doi']) if 'doi' in bib_c.keys() else ''
-                text += ' &ensp; **\[[PDF](%s)\]**' % bib_c['pdf'] if 'pdf' in bib_c.keys() else ''
-                text += ' &ensp; **\[[Supplementary](%s)\]**' % bib_c['supplementary'] if 'supplementary' in bib_c.keys() else ''
-                text += ' &ensp; **\[[Code](%s)\]**' % bib_c['code'] if 'code' in bib_c.keys() else ''
-                text += ' &ensp; **\[[Data](%s)\]**' % bib_c['data'] if 'data' in bib_c.keys() else ''
-                text += '<br>\n'
+
+                if bib_c['ENTRYTYPE'] in ['patent']:
+                    text += '*US Patent %s*, ' % bib_c['number']
+                    text += '%s <br>\n' % bib_c['year']
+                else: # 'article', 'inproceedings'
+                    text += '*%s*, ' % bib_c['journal'] if 'journal' in bib_c.keys() else '*%s*, ' % bib_c['booktitle']
+                    text += '%s <br>\n' % bib_c['year']
+
+                # text = _prepend_emoji(text, bib_c)
+                if 'links' in bib_c.keys():
+                    for link_key, link_val in bib_c['links'].items():
+                        text += '**\[[%s](%s)\]** &ensp; ' % (link_key, link_val)
+                else:
+                    text += '**\[[DOI](%s)\]**' % ('https://doi.org/'+bib_c['doi']) if 'doi' in bib_c.keys() else ''
+                    text += ' &ensp; **\[[PDF](%s)\]**' % bib_c['pdf'] if 'pdf' in bib_c.keys() else ''
+                    text += ' &ensp; **\[[Supplementary](%s)\]**' % bib_c['supplementary'] if 'supplementary' in bib_c.keys() else ''
+                    text += ' &ensp; **\[[Code](%s)\]**' % bib_c['code'] if 'code' in bib_c.keys() else ''
+                    text += ' &ensp; **\[[Data](%s)\]**' % bib_c['data'] if 'data' in bib_c.keys() else ''
+                text += '<br>\n\n'
 
                 # text += '<details> ' \
                 #         '<summary>Abstract</summary> ' \
@@ -172,8 +202,13 @@ if __name__=='__main__':
                 match = False
         return match
 
-    bibtex_dict = OrderedDict(bibtexparser.load(open("data/reference.bib")).entries_dict)
-    reference_json = json.load(open('data/reference.json'))
+    if 1 and 0:
+        bibtex_dict = OrderedDict(bibtexparser.load(open('data/reference.bib', 'rt')).entries_dict)
+    else:
+        from bibtexparser.bparser import BibTexParser
+        parser_non_standard = BibTexParser(ignore_nonstandard_types=False)
+        bibtex_dict = OrderedDict(bibtexparser.load(open('data/reference.bib', 'rt'), parser=parser_non_standard).entries_dict)
+    reference_json = json.load(open('data/reference.json', 'rt'))
 
     print('check if reference.bib and reference.json match with each other')
     match = _check_keys_match(list(bibtex_dict.keys()), list(reference_json.keys()))
@@ -185,21 +220,25 @@ if __name__=='__main__':
         for k2 in reference_json[k1].keys():
             bibtex_dict[k1][k2] = reference_json[k1][k2]
     # people_yaml = yaml.safe_load(open('data/people.yml'))
-    people_json = json.load(open('data/people.json'))
+    people_json = json.load(open('data/people.json', 'rt'))
     print(' ')
 
-    fp_w = open('index.md', 'w')
+    fp_w = open('index.md', 'wt', encoding='utf-8')
     write_frontmatter(fp_w)
     # write_navigation(fp_w)
     # write_people(fp_w, people_yaml)
     # write_goal(fp_w)
     fp_w.write('# Publications <a name="publications"></a>\n')
     # fp_w.write('<h2 id="test-page">Test page</h2>\n')
+    legend = (u'| 🟩 | Patent | 🟧 | Journal <br> (Engineering) | 🟦 | Conference <br> (Engineering) | ⬜ | Clinical <br> Paper |\n'
+              u'|-|-|-|-|-|-|-|-|\n')
+    fp_w.write(legend)
 
     # 'order': None (just group), 'ascend', 'descend', [list] (sort according to the list)
     orders = [{'key': 'year', 'order': 'descend', 'output': 'title'},
-              {'key': 'ENTRYTYPE', 'order': ['article', 'inproceedings'], 'output': 'tag'},
-              {'key': 'type', 'order': ['engineering', 'clinical'], 'output': 'tag'}]
+              {'key': 'type', 'order': ['engineering', 'clinical'], 'output': 'tag'},
+              {'key': 'ENTRYTYPE', 'order': ['article', 'inproceedings', 'patent'], 'output': 'tag'},
+              ]
 
     process_publications(fp_w, bibtex_dict, orders, people_json)
 
