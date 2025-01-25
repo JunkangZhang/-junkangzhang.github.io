@@ -3,7 +3,7 @@ permalink: /
 ---
 
 # Publications <a name="publications"></a>
-| 🟩 | Patent | 🟧 | Journal <br> (Engineering) | 🟦 | Conference <br> (Engineering) | ⬜ | Clinical <br> Paper |
+| 🟩 | Patent | 🟧 | Journal (Engineering) | 🟦 | Conference (Engineering) | ⬜ | Clinical Paper |
 |-|-|-|-|-|-|-|-|
 ### 2024
 🟩 &ensp; **Systems and Methods for Facial Attribute Manipulation** <br>

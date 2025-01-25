@@ -230,7 +230,7 @@ if __name__=='__main__':
     # write_goal(fp_w)
     fp_w.write('# Publications <a name="publications"></a>\n')
     # fp_w.write('<h2 id="test-page">Test page</h2>\n')
-    legend = (u'| 🟩 | Patent | 🟧 | Journal <br> (Engineering) | 🟦 | Conference <br> (Engineering) | ⬜ | Clinical <br> Paper |\n'
+    legend = (u'| 🟩 | Patent | 🟧 | Journal (Engineering) | 🟦 | Conference (Engineering) | ⬜ | Clinical Paper |\n'
               u'|-|-|-|-|-|-|-|-|\n')
     fp_w.write(legend)
 
