@@ -3,8 +3,10 @@ permalink: /
 ---
 
 # Publications <a name="publications"></a>
+
 | 🟩 | Patent | 🟧 | Journal (Engineering) | 🟦 | Conference (Engineering) | ⬜ | Clinical Paper |
 |-|-|-|-|-|-|-|-|
+
 ### 2024
 🟩 &ensp; **Systems and Methods for Facial Attribute Manipulation** <br>
 **[Junkang Zhang](https://junkangzhang.github.io/)**, Zhen Wang, Lei Wang, Ning Bi <br>

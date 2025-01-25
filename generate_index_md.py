@@ -228,10 +228,10 @@ if __name__=='__main__':
     # write_navigation(fp_w)
     # write_people(fp_w, people_yaml)
     # write_goal(fp_w)
-    fp_w.write('# Publications <a name="publications"></a>\n')
+    fp_w.write('# Publications <a name="publications"></a>\n\n')
     # fp_w.write('<h2 id="test-page">Test page</h2>\n')
     legend = (u'| 🟩 | Patent | 🟧 | Journal (Engineering) | 🟦 | Conference (Engineering) | ⬜ | Clinical Paper |\n'
-              u'|-|-|-|-|-|-|-|-|\n')
+              u'|-|-|-|-|-|-|-|-|\n\n')
     fp_w.write(legend)
 
     # 'order': None (just group), 'ascend', 'descend', [list] (sort according to the list)
